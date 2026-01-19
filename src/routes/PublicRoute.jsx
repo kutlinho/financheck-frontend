@@ -4,8 +4,8 @@ const isAuthenticated = () => {
     return !!localStorage.getItem("financheck_token");
 };
 
-const PrivateRoute = () => {
-    return isAuthenticated() ? <Outlet /> : <Navigate to="/login" replace />;
+const PublicRoute = () => {
+    return isAuthenticated() ? <Navigate to="/dashboard" replace /> : <Outlet />;
 };
 
-export default PrivateRoute;
+export default PublicRoute;

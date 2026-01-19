@@ -6,6 +6,7 @@ import Login from "./pages/auth/Login.jsx";
 import Register from "./pages/auth/Register.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 
 function App() {
@@ -16,8 +17,8 @@ function App() {
             <Routes>
 
                 {/* PUBLIC ROUTES */}
-                <Route element={<PublicRoute />}>
                     <Route path="/login" element={<Login />} />
+                <Route element={<PublicRoute />}>
                     <Route path="/register" element={<Register />} />
                 </Route>
 
