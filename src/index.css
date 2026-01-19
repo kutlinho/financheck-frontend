@@ -4,3 +4,35 @@
 
 /* VITE ONLY: In "styled" mode you must add the PrimeReact Theme here. Do NOT include in "unstyled" mode */
 @import 'primereact/resources/themes/lara-light-blue/theme.css';
+@theme {
+
+    --font-sans: 'Montserrat', ui-sans-serif, system-ui;
+
+    /*primary*/
+    --color-primary-green-dark: #27AE60;
+    --color-primary-green-light: #27AE60;
+
+    /*secondary*/
+    --color-secondary-blue-light: #3498DB;
+    --color-secondary-blue-dark: #2980B9;
+
+    /*neutral*/
+    --color-neutral-bg-light: #F5F6FA;
+    --color-neutral-bg-grey: #ECF0F1;
+
+    /*text*/
+    --color-text-dark:#2C3E50;
+    --color-text-subtle: #7F8CD8;
+
+    /*alert*/
+    --color-alert-red-light: #E74C3C;
+    --color-alert-red-dark: #C0392B;
+}
+
+@layer tailwind-base {
+    body {
+        font-family: var(--font-sans), serif;
+        color: var(--color-text-dark);
+        background-color: var(--color-neutral-bg-light);
+    }
+}
