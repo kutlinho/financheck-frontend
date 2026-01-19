@@ -1,12 +1,42 @@
 import { PrimeReactProvider } from 'primereact/api';
-import { Button } from 'primereact/button';
+import {BrowserRouter, Route, Routes} from "react-router";
+import MainLayout from "./layout/MainLayout.jsx";
+import PublicRoute from "./routes/PublicRoute.jsx";
+import Login from "./pages/auth/Login.jsx";
+import Register from "./pages/auth/Register.jsx";
+import PrivateRoute from "./routes/PrivateRoute.jsx";
+import Dashboard from "./pages/dashboard/Dashboard.jsx";
 
 
 function App() {
 
   return (
     <PrimeReactProvider>
-        <h1 className="text-red-300 text-center">Hello World</h1>
+        <BrowserRouter>
+            <Routes>
+
+                {/* PUBLIC ROUTES */}
+                <Route element={<PublicRoute />}>
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                </Route>
+
+                {/* PROTECTED ROUTES */}
+                <Route element={<PrivateRoute />}>
+                    <Route element={<MainLayout />}>
+                        <Route path="/dashboard" element={<Dashboard />} />
+                        {/*<Route path="/transactions" element={<Transactions />} />*/}
+                        {/*<Route path="/accounts" element={<Accounts />} />*/}
+                        {/*<Route path="/reports" element={<Reports />} />*/}
+                    </Route>
+                </Route>
+
+                {/* FALLBACK */}
+                <Route path="*" element={<NotFound />} />
+
+            </Routes>
+        </BrowserRouter>
+
     </PrimeReactProvider>
   )
 }
