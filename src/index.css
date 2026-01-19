@@ -30,7 +30,7 @@
 }
 
 @layer tailwind-base {
-    body {
+    body, .p-inputtext {
         font-family: var(--font-sans), serif;
         color: var(--color-text-dark);
         background-color: var(--color-neutral-bg-light);
