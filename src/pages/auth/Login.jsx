@@ -2,6 +2,7 @@ import React, {useRef} from 'react';
 import CustomCard from "../../components/CustomCard/CustomCard.jsx";
 import Banner from "../../assets/financheck-logo.svg"
 import {InputText} from 'primereact/inputtext';
+import CustomButton from "../../components/CustomButton/CustomButton.jsx";
 
 
 function Login() {
@@ -33,7 +34,7 @@ function Login() {
                     placeholder="Şifre"
                     className="w-[327px]"
                 />
-
+                <CustomButton className="w-[327px]" type="primary" label="Giriş Yapın"/>
             </CustomCard>
 
         </div>

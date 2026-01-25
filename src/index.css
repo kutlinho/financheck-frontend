@@ -7,6 +7,7 @@
 @theme {
 
     --font-sans: 'Montserrat', ui-sans-serif, system-ui;
+    --border-radius: 8px;
 
     /*primary*/
     --color-primary-green-dark: #27AE60;
@@ -29,10 +30,20 @@
     --color-alert-red-dark: #C0392B;
 }
 
+@layer tailwind-utilities {
+    @tailwind utilities;
+}
+
 @layer tailwind-base {
-    body, .p-inputtext {
+    body{
         font-family: var(--font-sans), serif;
         color: var(--color-text-dark);
         background-color: var(--color-neutral-bg-light);
     }
+}
+
+.p-inputtext {
+    font-family: var(--font-sans), serif;
+    border: 1px solid var(--color-neutral-bg-grey);
+    border-radius: var(--border-radius);
 }
