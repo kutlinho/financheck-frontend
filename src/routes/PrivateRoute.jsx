@@ -1,7 +1,8 @@
 import { Navigate, Outlet } from "react-router-dom";
 
 const isAuthenticated = () => {
-    return !!localStorage.getItem("financheck_token");
+    // return !!localStorage.getItem("financheck_token");
+    return true;
 };
 
 const PrivateRoute = () => {
