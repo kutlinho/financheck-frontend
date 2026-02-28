@@ -19,7 +19,7 @@ function Login({isRegister}) {
         : "Uygulamaya giriş yapabilmek için kullanıcı adı ve şifrenizi girin"
     const buttonLabel = isRegister ? "Kaydolun" : "Giriş Yapın"
 
-    return (<div className="flex flex-col justify-center items-center gap-5 h-screen w-full">
+    return (<div className="flex flex-col justify-center items-center gap-5 h-full w-full py-3">
 
         <img src={Banner} className="h-16" alt="logo"/>
         <CustomCard
@@ -27,7 +27,6 @@ function Login({isRegister}) {
             headerClassName="text-center pt-16"
             header={customHeader}
             width="w-[753px]"
-            height="h-[545px]"
         >
             {cardText}
 

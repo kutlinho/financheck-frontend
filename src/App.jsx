@@ -3,7 +3,6 @@ import {BrowserRouter, Route, Routes} from "react-router";
 import MainLayout from "./layout/MainLayout.jsx";
 import PublicRoute from "./routes/PublicRoute.jsx";
 import Login from "./pages/auth/Login.jsx";
-import Register from "./pages/auth/Register.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import NotFound from "./pages/NotFound.jsx";
@@ -19,7 +18,7 @@ function App() {
                 {/* PUBLIC ROUTES */}
                     <Route path="/login" element={<Login />} />
                 <Route element={<PublicRoute />}>
-                    <Route path="/register" element={<Register />} />
+                    <Route path="/register" element={<Login isRegister={true} />} />
                 </Route>
 
                 {/* PROTECTED ROUTES */}
