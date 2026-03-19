@@ -6,6 +6,7 @@ import Login from "./pages/auth/Login.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import {Navigate} from "react-router-dom";
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
     <PrimeReactProvider>
         <BrowserRouter>
             <Routes>
+
+                <Route path="/" element={<Navigate to="/dashboard" />} />
 
                 {/* PUBLIC ROUTES */}
                     <Route path="/login" element={<Login />} />
