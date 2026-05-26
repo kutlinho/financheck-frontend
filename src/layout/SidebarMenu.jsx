@@ -15,82 +15,46 @@ export default function SidebarMenu() {
     ];
 
     return (
-        <div style={{ display: "flex", perspective: "1000px",height: "100vh" }}>
+        <div className="flex h-screen [perspective:1000px]">
 
             {/* Sidebar + Buton wrapper */}
             <div
+                className={`relative flex-shrink-0 z-10 transition-all duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] origin-left ${collapsed ? "w-14" : "w-60"}`}
                 style={{
-                    position: "relative",          // butonun absolute konumlanacağı referans
-                    width: collapsed ? 56 : 240,
-                    minWidth: collapsed ? 56 : 240,
-                    transition: "width 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.35s",
                     transform: collapsed
                         ? "translateZ(-40px) scale(0.97)"
                         : "translateZ(0px)",
-                    transformOrigin: "left center",
-                    flexShrink: 0,
-                    zIndex: 10,
                 }}
             >
                 {/* Sidebar */}
-                <div
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        borderRight: "1px solid #e5e7eb",
-                        overflow: "hidden",
-                    }}
-                >
+                <div className="w-full h-full border-r border-gray-200 overflow-hidden">
+
                     {/* Logo */}
-                    <div style={{ padding: "16px 14px", display: "flex", gap: 10 }}>
-                        <i className="pi pi-th-large" style={{ fontSize: 20, color: "#185FA5" }} />
-                        {!collapsed && <span style={{ fontWeight: 500 }}>Dashboard</span>}
+                    <div className="flex items-center gap-2.5 px-3.5 py-4">
+                        <i className="pi pi-th-large text-xl text-blue-700" />
+                        {!collapsed && <span className="font-medium">Dashboard</span>}
                     </div>
 
                     {/* Menü öğeleri */}
                     {menuItems.map((item) => (
                         <div
                             key={item.label}
-                            style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: 10,
-                                padding: "15px 14px",
-                                cursor: "pointer",
-                                whiteSpace: "nowrap",
-                                overflow: "hidden",
-                            }}
+                            className="flex items-center gap-2.5 px-3.5 py-[15px] cursor-pointer whitespace-nowrap overflow-hidden rounded-lg transition-colors duration-150 hover:bg-blue-50 hover:text-blue-600"
                         >
-                            <i className={item.icon} style={{ fontSize: 16, minWidth: 20 }} />
+                            <i className={`${item.icon} text-base`} style={{ minWidth: 20 }} />
                             {!collapsed && <span>{item.label}</span>}
                         </div>
                     ))}
                 </div>
 
-                {/* Toggle butonu — sidebar'ın sağ kenarında, ortada */}
+                {/* Toggle butonu */}
                 <button
                     onClick={() => setCollapsed(!collapsed)}
-                    style={{
-                        position: "absolute",
-                        right: -14,
-                        top: "50%",
-                        transform: "translateY(-50%)",
-                        width: 28,
-                        height: 28,
-                        borderRadius: "50%",
-                        border: "1px solid #e5e7eb",
-                        background: "#fff",
-                        cursor: "pointer",
-                        zIndex: 20,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        boxShadow: "0 1px 4px rgba(0,0,0,0.1)",
-                    }}
+                    className="absolute -right-3.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full border border-gray-200 bg-white z-20 flex items-center justify-center cursor-pointer shadow-sm hover:bg-gray-50 transition-colors duration-150"
                 >
-                    <i className={`pi ${collapsed ? "pi-chevron-right" : "pi-chevron-left"}`} />
+                    <i className={`pi ${collapsed ? "pi-chevron-right" : "pi-chevron-left"} text-xs text-gray-500`} />
                 </button>
             </div>
-            </div>
+        </div>
     );
 }
