@@ -5,7 +5,7 @@ const CustomCard = ({
                     header,
                     children,
                     width = "w-full",
-                    height = "h-auto",
+                    height = "",
                     className = "",
                     headerClassName = "",
                     bodyClassName = "",
@@ -22,11 +22,11 @@ const CustomCard = ({
             {header && (
                 <div
                     className={clsx(
-                        "px-4 py-3 text-3xl font-semibold text-gray-800",
+                        "text-center px-4 py-3 text-3xl font-semibold text-gray-800",
                         headerClassName
                     )}
                 >
-                    {header}
+                    {header.toUpperCase()}
                 </div>
             )}
 
