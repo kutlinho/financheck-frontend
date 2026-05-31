@@ -15,7 +15,7 @@ export default function SidebarMenu() {
     ];
 
     return (
-        <div className="flex h-screen [perspective:1000px]">
+        <div className="flex h-screen [perspective:1000px] z-10">
 
             {/* Sidebar + Buton wrapper */}
             <div

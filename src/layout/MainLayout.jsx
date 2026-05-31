@@ -11,7 +11,7 @@ const MainLayout = () => {
                 {/* Navbar */}
                 <header>Financheck</header>
                 {/* Content */}
-                <main>
+                <main className="px-5 py-5">
                     <Outlet/>
                 </main>
             </div>
